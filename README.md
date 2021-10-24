@@ -1,5 +1,5 @@
 # 我的餐飲清單
-![Background-Image](https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg)
+![](https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg)
 
 ## 開發目的
 透過網頁將我的餐廳收藏列表分享給大家，並且加上搜尋等功能，讓大家能更快速的找到美食。
