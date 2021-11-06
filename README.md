@@ -18,4 +18,12 @@
 * Bootstrap
 * Font-awesome
 
+## 如何開啟網頁
+
+* 第一步開啟terminal
+
+* 第二步打上[git clone https://github.com/Freya-Jheng/restaurant-list.git]
+
+完成兩步驟即可在電腦上面找到下載下來的檔案，因為會同時將.git檔案一起下載下來，因此你也可以直接在Source上面打開檔案進行編輯。
+
 
