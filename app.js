@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const restaurantsList = require('./restaurant.json')
 
 const app = express()
-const port  = 3000
+const port = 3000
 
 
 
@@ -17,33 +17,47 @@ app.get('/', (req, res) => {
 })
 
 // index page root
-app.get('/restaurants/', (req, res)=>{
-  res.render('index', {restaurants : restaurantsList.results})
+app.get('/restaurants/', (req, res) => {
+
+  res.render('index', { restaurants: restaurantsList.results })
+
 })
 
 // show page root
 app.get("/restaurants/:restaurantId", (req, res) => {
-  const restaurants = restaurantsList.results.find(restaurant=> restaurant.id === Number(req.params.restaurantId))
+  const restaurants = restaurantsList.results.find(restaurant => restaurant.id === Number(req.params.restaurantId))
   res.render('show', { restaurants: restaurants })
 })
 
 // search root 
-app.get('/search', (req, res)=>{
+app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  const restaurants = restaurantsList.results.filter(function(res){return res.name.toLowerCase().includes(keyword.toLowerCase())}
-  )
+  // const restaurants = restaurantsList.results.filter(res => { return res.name.toLowerCase().includes(keyword.toLowerCase())}
+  // )
+
+  const restaurants = restaurantsList.results.filter(function (res) {
+    if (res.name.toLowerCase().includes(keyword.toLowerCase())) {
+
+      return res.name.toLowerCase().includes(keyword.toLowerCase())
+
+    } else if (res.category.toLowerCase().includes(keyword.toLowerCase())) {
+
+      return res.category.toLowerCase().includes(keyword.toLowerCase())
+
+    }
+  })
+
   let showErrMsg = false
 
-  if(restaurants.length === 0){
-      showErrMsg = true
+  if (restaurants.length === 0) {
+    showErrMsg = true
   }
-
-  res.render('index', { restaurants, keyword, showErrMsg})
+  res.render('index', { restaurants, keyword, showErrMsg })
 })
 
 
 
-app.listen(port, ()=> {
+app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
 })
 
