@@ -32,19 +32,17 @@ app.get("/restaurants/:restaurantId", (req, res) => {
 // search root 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  // const restaurants = restaurantsList.results.filter(res => { return res.name.toLowerCase().includes(keyword.toLowerCase())}
-  // )
-
   const restaurants = restaurantsList.results.filter(function (res) {
-    if (res.name.toLowerCase().includes(keyword.toLowerCase())) {
+    return (res.name.toLowerCase().includes(keyword.toLowerCase())) || (res.category.toLowerCase().includes(keyword.toLowerCase()))
+    // if (res.name.toLowerCase().includes(keyword.toLowerCase())) {
 
-      return res.name.toLowerCase().includes(keyword.toLowerCase())
+    //   return res.name.toLowerCase().includes(keyword.toLowerCase())
 
-    } else if (res.category.toLowerCase().includes(keyword.toLowerCase())) {
+    // } else if (res.category.toLowerCase().includes(keyword.toLowerCase())) {
 
-      return res.category.toLowerCase().includes(keyword.toLowerCase())
+    //   return res.category.toLowerCase().includes(keyword.toLowerCase())
 
-    }
+    // }
   })
 
   let showErrMsg = false

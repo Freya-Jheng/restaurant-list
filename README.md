@@ -20,10 +20,37 @@
 
 ## 如何開啟網頁
 
-* 第一步開啟terminal
+* Step One => 開啟terminal
 
-* 第二步打上[git clone https://github.com/Freya-Jheng/restaurant-list.git]
+* Step Two => 下載此專案
+輸入
+```
+git clone https://github.com/Freya-Jheng/restaurant-list.git]
+```
 
-完成兩步驟即可在電腦上面找到下載下來的檔案，因為會同時將.git檔案一起下載下來，因此你也可以直接在Source上面打開檔案進行編輯。
+* Step Three => 移動至此專案
+輸入
+```
+cd restaurant-list
+```
+
+* Step Four => 安裝Express
+輸入
+```
+npm i express
+```
+
+* Step Five => 執行專案（請確認terminal路徑已經導向專案）
+```
+npm run dev
+```
+
+* Step Six => 打開網頁
+將以下網址貼上瀏覽器，即可瀏覽網頁
+```
+http://localhost:3000/
+``
+
+完成以上步驟即可在電腦上面找到下載下來的檔案，也下載時會同時將.git檔案一起下載下來，因此也可以直接在Source上面打開檔案進行編輯。
 
 
