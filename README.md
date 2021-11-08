@@ -37,7 +37,7 @@ cd restaurant-list
 * Step Four => 安裝Express
 輸入
 ```
-npm i express
+npm install
 ```
 
 * Step Five => 執行專案（請確認terminal路徑已經導向專案）
